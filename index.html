@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Game Checker</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- ==============================
+         หัวเว็บ
+         ============================== -->
+
+    <h1>🎮 Game Checker</h1>
+
+    <p>
+        เช็กว่าสเปกคอมของคุณเล่นเกมได้หรือไม่
+    </p>
+
+
+    <hr>
+
+
+    <!-- ==============================
+         เลือกเกม
+         ============================== -->
+
+    <h2>เลือกเกม</h2>
+
+
+    <input
+        type="text"
+        id="searchGame"
+        placeholder="🔎 พิมพ์ชื่อเกมเพื่อค้นหา..."
+    >
+
+
+    <p id="gameCount">
+        กำลังโหลดจำนวนเกม...
+    </p>
+
+
+    <select id="game">
+
+        <option>
+            กำลังโหลดเกม...
+        </option>
+
+    </select>
+
+
+    <!-- ==============================
+         สเปกเกม
+         ============================== -->
+
+    <div id="gameRequirements"></div>
+
+
+    <!-- ==============================
+         สเปกคอมของผู้ใช้
+         ============================== -->
+
+    <h2>
+        สเปกคอมของคุณ
+    </h2>
+
+
+    <!-- ==============================
+         CPU
+         ============================== -->
+
+    <label>
+        CPU
+    </label>
+
+
+    <select id="cpu">
+
+
+        <!-- ==========================
+             Intel Core i3
+             ========================== -->
+
+        <option value="i3-10100">
+            Intel Core i3-10100
+        </option>
+
+        <option value="i3-12100f">
+            Intel Core i3-12100F
+        </option>
+
+        <option value="i3-13100f">
+            Intel Core i3-13100F
+        </option>
+
+
+        <!-- ==========================
+             Intel Core i5
+             ========================== -->
+
+        <option value="i5-10400">
+            Intel Core i5-10400
+        </option>
+
+        <option value="i5-11400f">
+            Intel Core i5-11400F
+        </option>
+
+        <option value="i5-12400f">
+            Intel Core i5-12400F
+        </option>
+
+        <option value="i5-12600k">
+            Intel Core i5-12600K
+        </option>
+
+        <option value="i5-13400f">
+            Intel Core i5-13400F
+        </option>
+
+        <option value="i5-13500">
+            Intel Core i5-13500
+        </option>
+
+        <option value="i5-13600k">
+            Intel Core i5-13600K
+        </option>
+
+        <option value="i5-14400f">
+            Intel Core i5-14400F
+        </option>
+
+        <option value="i5-14500">
+            Intel Core i5-14500
+        </option>
+
+        <option value="i5-14600k">
+            Intel Core i5-14600K
+        </option>
+
+
+        <!-- ==========================
+             Intel Core i7
+             ========================== -->
+
+        <option value="i7-10700">
+            Intel Core i7-10700
+        </option>
+
+        <option value="i7-12700">
+            Intel Core i7-12700
+        </option>
+
+        <option value="i7-13700">
+            Intel Core i7-13700
+        </option>
+
+        <option value="i7-14700">
+            Intel Core i7-14700
+        </option>
+
+        <option value="i7-14700k">
+            Intel Core i7-14700K
+        </option>
+
+
+        <!-- ==========================
+             Intel Core i9
+             ========================== -->
+
+        <option value="i9-12900k">
+            Intel Core i9-12900K
+        </option>
+
+        <option value="i9-13900k">
+            Intel Core i9-13900K
+        </option>
+
+        <option value="i9-14900k">
+            Intel Core i9-14900K
+        </option>
+
+
+        <!-- ==========================
+             Intel Core Ultra
+             ========================== -->
+
+        <option value="ultra5-245k">
+            Intel Core Ultra 5 245K
+        </option>
+
+        <option value="ultra7-265k">
+            Intel Core Ultra 7 265K
+        </option>
+
+        <option value="ultra9-285k">
+            Intel Core Ultra 9 285K
+        </option>
+
+
+        <!-- ==========================
+             AMD Ryzen 5
+             ========================== -->
+
+        <option value="r5-3600">
+            AMD Ryzen 5 3600
+        </option>
+
+        <option value="r5-5500">
+            AMD Ryzen 5 5500
+        </option>
+
+        <option value="r5-5600">
+            AMD Ryzen 5 5600
+        </option>
+
+        <option value="r5-7500f">
+            AMD Ryzen 5 7500F
+        </option>
+
+        <option value="r5-7600">
+            AMD Ryzen 5 7600
+        </option>
+
+        <option value="r5-7600x">
+            AMD Ryzen 5 7600X
+        </option>
+
+
+        <!-- ==========================
+             AMD Ryzen 7
+             ========================== -->
+
+        <option value="r7-5700x">
+            AMD Ryzen 7 5700X
+        </option>
+
+        <option value="r7-5800x3d">
+            AMD Ryzen 7 5800X3D
+        </option>
+
+        <option value="r7-7700">
+            AMD Ryzen 7 7700
+        </option>
+
+        <option value="r7-7700x">
+            AMD Ryzen 7 7700X
+        </option>
+
+        <option value="r7-7800x3d">
+            AMD Ryzen 7 7800X3D
+        </option>
+
+        <option value="r7-9700x">
+            AMD Ryzen 7 9700X
+        </option>
+
+        <option value="r7-9800x3d">
+            AMD Ryzen 7 9800X3D
+        </option>
+
+
+        <!-- ==========================
+             AMD Ryzen 9
+             ========================== -->
+
+        <option value="r9-9900x">
+            AMD Ryzen 9 9900X
+        </option>
+
+        <option value="r9-9950x">
+            AMD Ryzen 9 9950X
+        </option>
+
+        <option value="r9-9950x3d">
+            AMD Ryzen 9 9950X3D
+        </option>
+
+
+    </select>
+
+
+    <br>
+    <br>
+
+
+    <!-- ==============================
+         GPU
+         ============================== -->
+
+    <label>
+        GPU
+    </label>
+
+
+    <select id="gpu">
+
+
+        <!-- NVIDIA GTX -->
+
+        <option value="gtx1050ti">
+            NVIDIA GTX 1050 Ti
+        </option>
+
+        <option value="gtx1650">
+            NVIDIA GTX 1650
+        </option>
+
+        <option value="gtx1660">
+            NVIDIA GTX 1660
+        </option>
+
+        <option value="gtx1660s">
+            NVIDIA GTX 1660 Super
+        </option>
+
+
+        <!-- NVIDIA RTX 20 -->
+
+        <option value="rtx2060">
+            NVIDIA RTX 2060
+        </option>
+
+
+        <!-- NVIDIA RTX 30 -->
+
+        <option value="rtx3050">
+            NVIDIA RTX 3050
+        </option>
+
+        <option value="rtx3060">
+            NVIDIA RTX 3060
+        </option>
+
+        <option value="rtx3070">
+            NVIDIA RTX 3070
+        </option>
+
+        <option value="rtx3080">
+            NVIDIA RTX 3080
+        </option>
+
+        <option value="rtx3090">
+            NVIDIA RTX 3090
+        </option>
+
+
+        <!-- NVIDIA RTX 40 -->
+
+        <option value="rtx4060">
+            NVIDIA RTX 4060
+        </option>
+
+        <option value="rtx4060ti">
+            NVIDIA RTX 4060 Ti
+        </option>
+
+        <option value="rtx4070">
+            NVIDIA RTX 4070
+        </option>
+
+        <option value="rtx4070s">
+            NVIDIA RTX 4070 Super
+        </option>
+
+        <option value="rtx4070ti">
+            NVIDIA RTX 4070 Ti
+        </option>
+
+        <option value="rtx4070tis">
+            NVIDIA RTX 4070 Ti Super
+        </option>
+
+        <option value="rtx4080">
+            NVIDIA RTX 4080
+        </option>
+
+        <option value="rtx4090">
+            NVIDIA RTX 4090
+        </option>
+
+
+        <!-- NVIDIA RTX 50 -->
+
+        <option value="rtx5050">
+            NVIDIA RTX 5050
+        </option>
+
+        <option value="rtx5060">
+            NVIDIA RTX 5060
+        </option>
+
+        <option value="rtx5060ti">
+            NVIDIA RTX 5060 Ti
+        </option>
+
+        <option value="rtx5070">
+            NVIDIA RTX 5070
+        </option>
+
+        <option value="rtx5070ti">
+            NVIDIA RTX 5070 Ti
+        </option>
+
+        <option value="rtx5080">
+            NVIDIA RTX 5080
+        </option>
+
+        <option value="rtx5090">
+            NVIDIA RTX 5090
+        </option>
+
+
+        <!-- AMD RX 500 -->
+
+        <option value="rx570">
+            AMD RX 570
+        </option>
+
+        <option value="rx580">
+            AMD RX 580
+        </option>
+
+
+        <!-- AMD RX 5000 -->
+
+        <option value="rx5600xt">
+            AMD RX 5600 XT
+        </option>
+
+        <option value="rx5700xt">
+            AMD RX 5700 XT
+        </option>
+
+
+        <!-- AMD RX 6000 -->
+
+        <option value="rx6600">
+            AMD RX 6600
+        </option>
+
+        <option value="rx6700xt">
+            AMD RX 6700 XT
+        </option>
+
+        <option value="rx6800">
+            AMD RX 6800
+        </option>
+
+        <option value="rx6900xt">
+            AMD RX 6900 XT
+        </option>
+
+
+        <!-- AMD RX 7000 -->
+
+        <option value="rx7600">
+            AMD RX 7600
+        </option>
+
+        <option value="rx7700xt">
+            AMD RX 7700 XT
+        </option>
+
+        <option value="rx7800xt">
+            AMD RX 7800 XT
+        </option>
+
+        <option value="rx7900xt">
+            AMD RX 7900 XT
+        </option>
+
+        <option value="rx7900xtx">
+            AMD RX 7900 XTX
+        </option>
+
+
+        <!-- AMD RX 9000 -->
+
+        <option value="rx9060">
+            AMD RX 9060
+        </option>
+
+        <option value="rx9060xt">
+            AMD RX 9060 XT
+        </option>
+
+        <option value="rx9070">
+            AMD RX 9070
+        </option>
+
+        <option value="rx9070xt">
+            AMD RX 9070 XT
+        </option>
+
+
+    </select>
+
+
+    <br>
+    <br>
+
+
+    <!-- ==============================
+         RAM
+         ============================== -->
+
+    <label>
+        RAM
+    </label>
+
+
+    <select id="ram">
+
+        <option value="4">
+            4 GB
+        </option>
+
+        <option value="8">
+            8 GB
+        </option>
+
+        <option value="12">
+            12 GB
+        </option>
+
+        <option value="16" selected>
+            16 GB
+        </option>
+
+        <option value="24">
+            24 GB
+        </option>
+
+        <option value="32">
+            32 GB
+        </option>
+
+        <option value="64">
+            64 GB
+        </option>
+
+    </select>
+
+
+    <br>
+    <br>
+
+
+    <!-- ==============================
+         ปุ่มตรวจสอบ
+         ============================== -->
+
+    <button onclick="checkGame()">
+
+        🔍 ตรวจสอบสเปก
+
+    </button>
+
+
+    <!-- ==============================
+         ผลลัพธ์
+         ============================== -->
+
+    <div id="result"></div>
+
+
+</div>
+
+
+<!-- ==============================
+     JavaScript
+     ============================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
